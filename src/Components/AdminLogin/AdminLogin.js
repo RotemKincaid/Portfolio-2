@@ -26,19 +26,27 @@ class AdminLogin extends Component {
   };
 
   editToggle = id => {
+    console.log("id LABEL =====>", id);
     this.setState({
       isEditing: !this.state.isEditing
     });
   };
 
-  saveEdit = (message_id, message) => {
-    axios.put(`/api/messages/${message_id}?message=${message}`).then(res => {
-      console.log(res.data, "Res FROM ADMINLOGIN");
-      // this.setState({
-      //   newMessage: res.data.id
-      // });
-      this.props.setMessage(res.data);
+  saveEdit = id => {
+    console.log("1----------id from saveEdit", id);
+    // console.log("2-----------message from saveEdit", message);
+    // id = message.message_id;
+    const { message } = this.props;
+    axios.put(`/api/messages/${id}`, { message }).then(res => {
+      console.log(res, "3---------Res FROM ADMINLOGIN");
+      this.setState({
+        newMessage: res.data
+      });
+      // const { message } = this.props;
+      this.props.setMessages(res.data);
     });
+    this.editToggle();
+    this.getMessages();
   };
 
   newMessageHandler = e => {
@@ -50,10 +58,10 @@ class AdminLogin extends Component {
   };
 
   render() {
-    console.log(this.props.message);
+    console.log(this.props);
     const { loggedInUser, messages } = this.props;
     const mappedMessages = messages.map(message => (
-      <div className="message-container">
+      <div className="message-container" key={message.id}>
         <div className="titles">
           <h4>
             <h5 style={{ color: "purple" }}>From: </h5>
@@ -63,11 +71,12 @@ class AdminLogin extends Component {
             <h5 style={{ color: "purple" }}>Email: </h5> {message.email}
           </h4>
         </div>
+
         <p>
           <h5 style={{ textDecoration: "underline" }}>Message: </h5>
-          {message.message}
+          {message.message ? <span>{message.message}</span> : <span />}
         </p>
-        <button onClick={id => this.editToggle(id)}>edit message</button>
+
         {this.state.isEditing ? (
           <div>
             <input
@@ -75,15 +84,15 @@ class AdminLogin extends Component {
               onChange={this.newMessageHandler}
             />
             <button
-              onClick={() =>
-                this.saveEdit(this.props.message.id, this.props.message)
-              }
+              onClick={() => this.saveEdit(this.state.newMessage, message.id)}
             >
               save
             </button>
           </div>
         ) : (
-          <div />
+          <button onClick={() => this.editToggle(message.id)}>
+            edit message
+          </button>
         )}
       </div>
     ));

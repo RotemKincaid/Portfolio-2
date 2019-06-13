@@ -27,7 +27,7 @@ massive(CONNECTION_STRING).then(db => {
 
 app.post("/api/messages", controller.addMessage);
 app.get("/api/messages", controller.getMessages);
-app.put("/api/messages/:id", controller.editMessage);
+app.put("/api/messages/:message_id", controller.editMessage);
 
 // auth endpoints:
 

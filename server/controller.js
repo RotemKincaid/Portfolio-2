@@ -18,13 +18,14 @@ module.exports = {
   },
   editMessage: (req, res) => {
     const db = req.app.get("db");
-    const { message } = req.query;
     const { message_id } = req.params;
-
+    const { message } = req.body;
+    console.log("req dot body", message);
+    console.log("req dot params--->", message_id);
     db.edit_message([message, message_id])
       .then(message => {
         console.log("message from editMessage ->", message);
-        res.status(200).send(message[0]);
+        res.status(200).send(message);
       })
       .catch(err => {
         console.log(err, "Something went wrong on the server");
