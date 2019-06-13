@@ -1,0 +1,84 @@
+.about-main {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(41, 6, 122);
+  display: flex;
+
+  //   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // animation: backsplash 5s ease infinite;
+  // animation: 5s ease-in-out 5s infinite backsplash;
+  // transition: opacity 0.5s ease-in-out;
+  //   transition: 3s ease;
+  @keyframes backsplash {
+    0% {
+      background: linear-gradient(0.5turn, black, blue, purple);
+      //   transform: translate(0, 0);
+    }
+    50% {
+      background: linear-gradient(0.8turn, black, blue, purple);
+      //   transform: translate(0px, 0px);
+    }
+    100% {
+      background: linear-gradient(1turn, rgb(14, 189, 241), blue, purple);
+      //   transform: translate(0px, 0px);
+    }
+  }
+
+  .about-inner {
+    padding: 100px;
+    // padding-left: 60px;
+    margin-left: 30px;
+    width: 1200px;
+    // height: 600px;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+
+    .paragraphs {
+      display: flex;
+      //   margin-left: 0;
+      flex-direction: column;
+      //   align-items: center;
+      //   justify-content: flex-start;
+      width: 750px;
+      p {
+        width: 100%;
+        color: white;
+        font-size: 26px;
+        text-align: start;
+        line-height: 130%;
+        // margin: 20px;
+        // margin-top: 30px;
+      }
+
+      .about-me {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        color: rgb(10, 245, 245);
+        font-size: 70px;
+        margin: 0;
+        text-align: start;
+      }
+    }
+  }
+  .about-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .me-pic {
+      height: 330px;
+      border-radius: 30px;
+      position: fixed;
+      top: 300px;
+      right: 275px;
+    }
+    .skills-icons {
+      height: 200px;
+      position: fixed;
+      top: 505px;
+      right: 395px;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.header-main {
+  min-height: 100vh;
+  width: 120px;
+  float: left;
+  background: linear-gradient(
+    0.3turn,
+    rgb(21, 174, 245),
+    rgb(111, 0, 255),
+    purple
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: fixed;
+
+  img {
+    margin: 20px;
+  }
+  //   #h-home {
+
+  // .home-link {
+  //   text-decoration: none;
+  //   height: 80px;
+  // opacity: 0;
+  .home-pic {
+    height: 50px;
+    width: 50px;
+    position: relative;
+
+    &:hover {
+      // opacity: 0;
+      border: 1px solid grey;
+      box-shadow: 1px 1px 1px 1px rgba(245, 110, 110, 0.363);
+    }
+  }
+  // .text {
+  //   // color: green;
+  //   opacity: 0;
+  //   transition: opacity 0.5s ease-in-out;
+  //   position: relative;
+  //   color: rgb(230, 25, 25);
+  //   top: 0;
+  //   left: 0;
+  // }
+  // &:hover {
+  //   opacity: 1;
+  // }
+
+  // }
+
+  // .text {
+  //   transition: opacity 0.5s ease-in-out;
+  //   position: absolute;
+  //   color: rgb(230, 25, 25);
+  //   top: 20;
+  //   left: 20;
+  //
+  //   text-decoration: none;
+  //   -moz-transition: all 0.2s ease-in-out;
+  //   -webkit-transition: all 0.2s ease-in-out;
+  //   -ms-transition: all 0.2s ease-in-out;
+  //   -o-transition: all 0.2s ease-in-out;
+  //   transition: all 0.2s ease-in-out;
+  //   font-size: 25px;
+
+  //   display: table;
+  //   &:hover {
+  //   opacity: 1;
+  //   display: block;
+
+  //    font-size: 15px;
+  // }
+  // }
+
+  .me {
+    height: 60px;
+    width: 60px;
+    &:hover {
+      // opacity: 0;
+      border: 1px solid grey;
+      box-shadow: 1px 1px 1px 1px rgba(245, 110, 110, 0.363);
+    }
+  }
+  .skills-pic {
+    height: 50px;
+    width: 50px;
+    &:hover {
+      // opacity: 0;
+      border: 1px solid grey;
+      box-shadow: 1px 1px 1px 1px rgba(245, 110, 110, 0.363);
+    }
+  }
+  .code-pic {
+    height: 50px;
+    width: 50px;
+    &:hover {
+      // opacity: 0;
+      border: 1px solid grey;
+      box-shadow: 1px 1px 1px 1px rgba(245, 110, 110, 0.363);
+    }
+  }
+  .paper-plane {
+    height: 45px;
+    width: 45px;
+    &:hover {
+      // opacity: 0;
+      border: 1px solid grey;
+      box-shadow: 1px 1px 1px 1px rgba(245, 110, 110, 0.363);
+    }
+  }
+
+  .github {
+    height: 35px;
+    width: 35px;
+    padding-top: 30px;
+  }
+  .linkedin {
+    height: 35px;
+    width: 35px;
+  }
+}

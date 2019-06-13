@@ -1,0 +1,78 @@
+.contact-main {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(41, 6, 122);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .contact-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 900px;
+    h1 {
+      font-size: 70px;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      color: rgb(10, 245, 245);
+      margin: 0;
+      margin-top: 30px;
+    }
+    h4 {
+      font-size: 30px;
+      color: rgb(218, 64, 218);
+      text-shadow: 2px 2px 2px rgb(253, 251, 251);
+      margin: 50px;
+    }
+    .contact-form {
+      height: 500px;
+      width: 400px;
+      border-radius: 30px;
+      background-color: rgba(128, 128, 128, 0.39);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      margin: 40px;
+      box-shadow: 2px 2px 2px rgb(167, 165, 165);
+      input {
+        height: 35px;
+        width: 300px;
+        margin-top: 20px;
+        font-size: 20px;
+        border-radius: 8px;
+      }
+      .message {
+        height: 135px;
+        // float: left;
+        width: 75%;
+
+        // display: flex;
+        // justify-content: start;
+        // overflow: wrap;
+        // align-items: flex-start;
+        //   text-align: start;
+        font-size: 20px;
+
+        margin-bottom: 20px;
+      }
+    }
+    .mail {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      border: 3px solid rgb(9, 232, 240);
+      margin: 30px;
+    }
+  }
+  .toggle {
+    height: 30px;
+    width: 100px;
+    border-radius: 15px;
+    color: grey;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+}
