@@ -6,6 +6,7 @@ import Home from "./Components/Home/Home";
 import Work from "./Components/Work/Work";
 import About from "./Components/About/About";
 import AdminLogin from "./Components/AdminLogin/AdminLogin";
+import Message from "./Components/Message/Message";
 
 export default (
   <Switch>
@@ -15,5 +16,6 @@ export default (
     <Route path="/work" component={Work} />
     <Route path="/contact" component={Contact} />
     <Route path="/admin" component={AdminLogin} />
+    <Route path="/admin/:message" component={Message} />
   </Switch>
 );

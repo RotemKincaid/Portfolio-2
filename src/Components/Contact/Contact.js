@@ -4,7 +4,7 @@ import mail from "../Header/Assets/email.png";
 import axios from "axios";
 import AdminLogin from "../AdminLogin/AdminLogin";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import {
   setName,
   setEmail,
@@ -41,8 +41,8 @@ class Contact extends Component {
       this.setState({
         loggedInUser: res.data,
         adminEmail: "",
-        password: "",
-        loggedInUser: true
+        password: ""
+        // loggedInUser: true
       });
     });
   };

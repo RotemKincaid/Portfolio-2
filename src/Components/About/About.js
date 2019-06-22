@@ -14,6 +14,7 @@ class About extends Component {
         <div className="about-inner">
           <div className="paragraphs">
             <h1 className="about-me wow bounce">About me...</h1>
+            <br />
             <p className="about-1">
               I am a passionate, creative, and dedicated Web Developer. I
               recently graduated from DevMountain Web Development program, and I
@@ -22,6 +23,7 @@ class About extends Component {
               drive to continuously learn and contribute to the organizational
               goals.
             </p>
+            <br />
             <p className="about-2">
               I bring many years of experience in software sales, customer
               service and support with me, in addition to my newly acquired

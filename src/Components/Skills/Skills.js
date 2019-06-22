@@ -17,15 +17,15 @@ class Skills extends Component {
         <div className="skills-inner">
           <h1>My Skills...</h1>
           <div className="skills-img-container">
-            <img src={reactLogo} />
-            <img className="css-logo" src={cssLogo} />
-            <img className="js-logo" src={jsLogo} />
-            <img className="html-logo" src={htmlLogo} />
-            <img src={reduxLogo} />
-            <img src={postgresLogo} />
-            <img src={gitLogo} />
-            <img src={sassLogo} />
-            <img className="node-icon" src={nodeLogo} />
+            <img src={reactLogo} alt="react" />
+            <img className="css-logo" src={cssLogo} alt="css" />
+            <img className="js-logo" src={jsLogo} alt="js" />
+            <img className="html-logo" src={htmlLogo} alt="html" />
+            <img src={reduxLogo} alt="redux" />
+            <img src={postgresLogo} alt="postgresql" />
+            <img src={gitLogo} alt="git" />
+            <img src={sassLogo} alt="sass" />
+            <img className="node-icon" src={nodeLogo} alt="node" />
           </div>
           <p>
             I am a fun, creative individual, with a strong work ethic, excellent

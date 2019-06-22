@@ -28,10 +28,10 @@ class Work extends Component {
               the URL above to take a look!
             </p>
             <div className="screenshots-stager">
-              <img src={welcome} />
-              <img src={login} />
-              <img src={register} />
-              <img src={dash} />
+              <img src={welcome} alt="welcome" />
+              <img src={login} alt="login" />
+              <img src={register} alt="register" />
+              <img src={dash} alt="dash" />
             </div>
             <a href={mememaster}>www.mememaster.fun</a>
             <p>
@@ -41,11 +41,11 @@ class Work extends Component {
               well as animations and audio.
             </p>
             <div className="screenshots-meme">
-              <img src={landing} />
-              <img src={join} />
-              <img src={userAvatar} />
-              <img src={lobby} />
-              <img src={game} />
+              <img src={landing} alt="landing" />
+              <img src={join} alt="join" />
+              <img src={userAvatar} alt="avatar" />
+              <img src={lobby} alt="lobby" />
+              <img src={game} alt="game" />
             </div>
           </div>
         </div>

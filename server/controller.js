@@ -18,11 +18,11 @@ module.exports = {
   },
   editMessage: (req, res) => {
     const db = req.app.get("db");
-    const { message_id } = req.params;
-    const { message } = req.body;
-    console.log("req dot body", message);
-    console.log("req dot params--->", message_id);
-    db.edit_message([message, message_id])
+    const { id } = req.params;
+    const { message } = req.query;
+    console.log("req dot query", req.query);
+    console.log("req dot params--->", id);
+    db.edit_message([message, id])
       .then(message => {
         console.log("message from editMessage ->", message);
         res.status(200).send(message);

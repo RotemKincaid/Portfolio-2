@@ -11,8 +11,7 @@ class AdminLogin extends Component {
 
     this.state = {
       isEditing: false,
-      message: "",
-      newMessage: ""
+      message: ""
     };
   }
 
@@ -21,7 +20,7 @@ class AdminLogin extends Component {
   }
   getMessages = () => {
     axios.get("/api/messages").then(res => {
-      this.props.setMessages(res.data);
+      this.props.setMessages(res.data.reverse());
     });
   };
 
@@ -33,28 +32,27 @@ class AdminLogin extends Component {
   };
 
   saveEdit = id => {
-    console.log("1----------id from saveEdit", id);
-    // console.log("2-----------message from saveEdit", message);
-    // id = message.message_id;
-    const { message } = this.props;
-    axios.put(`/api/messages/${id}`, { message }).then(res => {
-      console.log(res, "3---------Res FROM ADMINLOGIN");
+    console.log(id);
+    const { message } = this.state;
+
+    axios.put(`/api/messages/${id}?message=${message}`).then(res => {
+      console.log(res.data, "3---------Res FROM ADMINLOGIN");
       this.setState({
-        newMessage: res.data
+        message: res.data
       });
       // const { message } = this.props;
       this.props.setMessages(res.data);
     });
-    this.editToggle();
     this.getMessages();
+    this.editToggle();
   };
 
   newMessageHandler = e => {
     this.setState({
-      newMessage: e.target.value
+      message: e.target.value
     });
-    const { newMessage } = this.state;
-    this.props.setMessage(newMessage);
+    // const { message } = this.state;
+    // this.props.setMessage(message);
   };
 
   render() {
@@ -62,6 +60,7 @@ class AdminLogin extends Component {
     const { loggedInUser, messages } = this.props;
     const mappedMessages = messages.map(message => (
       <div className="message-container" key={message.id}>
+        {/* <Link to={`/admin/${message.id}`}> */}
         <div className="titles">
           <h4>
             <h5 style={{ color: "purple" }}>From: </h5>
@@ -71,6 +70,7 @@ class AdminLogin extends Component {
             <h5 style={{ color: "purple" }}>Email: </h5> {message.email}
           </h4>
         </div>
+        {/* </Link> */}
 
         <p>
           <h5 style={{ textDecoration: "underline" }}>Message: </h5>
@@ -80,17 +80,15 @@ class AdminLogin extends Component {
         {this.state.isEditing ? (
           <div>
             <input
-              value={this.state.newMessage}
+              // value={this.props.message}
               onChange={this.newMessageHandler}
             />
-            <button
-              onClick={() => this.saveEdit(this.state.newMessage, message.id)}
-            >
+            <button onClick={() => this.saveEdit(message.message_id)}>
               save
             </button>
           </div>
         ) : (
-          <button onClick={() => this.editToggle(message.id)}>
+          <button onClick={() => this.editToggle(message.message_id)}>
             edit message
           </button>
         )}
