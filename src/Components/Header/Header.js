@@ -27,10 +27,12 @@ class Header extends Component {
     });
   };
   render() {
+    console.log(this.state.toggle);
+    const { toggle } = this.state;
     return (
       <div className="header-main">
         <button className="toggle-sidebar" onClick={() => this.sideBarToggle()}>
-          {!this.state.toggle ? (
+          {!toggle ? (
             <div className="toggle-container">
               <div className="header-line" />
               <div className="header-line" />
@@ -44,31 +46,76 @@ class Header extends Component {
             </div>
           )}
         </button>
-        <div className={this.state.toggle ? "show" : "header-inner"}>
-          <Link className="home-link" to="/">
-            <img className="home-pic" src={home} alt="home" />
-          </Link>
-          <Link to="/about">
-            <img className="me" src={me} alt="me" />
-          </Link>
-          <Link to="/skills">
-            <img className="skills-pic" src={skills} alt="skills" />
-          </Link>
-          <Link to="/work">
-            <img className="code-pic" src={work} alt="code" />
-          </Link>
-          <Link to="/contact">
-            <img className="paper-plane" src={paperPlane} alt="message" />
-          </Link>
-        </div>
-        <div className="links">
-          <a href={GitHubLink}>
-            <img className="github" src={github} alt="github" />
-          </a>
+        <div className={toggle ? "show" : "header-inner"}>
+          {toggle ? (
+            <Link to="/">
+              <div className="nav-links">
+                <img className="home-pic" src={home} alt="home" />
+                <h5>Home</h5>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/">
+              <img className="home-pic" src={home} alt="home" />
+            </Link>
+          )}
+          {toggle ? (
+            <Link to="/">
+              <div className="nav-links">
+                <img className="me" src={me} alt="me" />
+                <h5>About</h5>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/about">
+              <img className="me" src={me} alt="me" />
+            </Link>
+          )}
+          {toggle ? (
+            <Link to="/">
+              <div className="nav-links">
+                <img className="skills-pic" src={skills} alt="skills" />
+                <h5>Skills</h5>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/skills">
+              <img className="skills-pic" src={skills} alt="skills" />
+            </Link>
+          )}
+          {toggle ? (
+            <Link to="/">
+              <div className="nav-links">
+                <img className="code-pic" src={work} alt="code" />
+                <h5>Projects</h5>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/work">
+              <img className="code-pic" src={work} alt="code" />
+            </Link>
+          )}
+          {toggle ? (
+            <Link to="/">
+              <div className="nav-links">
+                <img className="paper-plane" src={paperPlane} alt="message" />
+                <h5>Contact</h5>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/contact">
+              <img className="paper-plane" src={paperPlane} alt="message" />
+            </Link>
+          )}
+          <div className="links">
+            <a href={GitHubLink}>
+              <img className="github" src={github} alt="github" />
+            </a>
 
-          <a href={linkedInLink}>
-            <img className="linkedin" src={linkedIn} alt="linkedin" />
-          </a>
+            <a href={linkedInLink}>
+              <img className="linkedin" src={linkedIn} alt="linkedin" />
+            </a>
+          </div>
         </div>
       </div>
     );
