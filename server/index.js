@@ -6,6 +6,7 @@ const controller = require("./controller");
 const session = require("express-session");
 const authCtrl = require("./authController");
 
+app.use(express.static(`${__dirname}/../build`));
 app.use(express.json());
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
@@ -22,8 +23,6 @@ massive(CONNECTION_STRING).then(db => {
   app.set("db", db);
   console.log("Connected to db");
 });
-
-app.use(express.static(`${__dirname}/../build`));
 
 // message endpoints:
 
