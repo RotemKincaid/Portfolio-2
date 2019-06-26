@@ -51,7 +51,7 @@ class Home extends Component {
           >
             {props => (
               <animated.div style={props} className="home-web">
-                A Web Developer{" "}
+                A Full Stack Web Developer
               </animated.div>
             )}
           </Spring>

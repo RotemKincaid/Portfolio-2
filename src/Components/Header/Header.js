@@ -8,7 +8,7 @@ import paperPlane from "./Assets/paper-plane.png";
 import github from "./Assets/github.png";
 import linkedIn from "./Assets/linkedin-logo.png";
 import { Link } from "react-router-dom";
-import burger from "./menu.png";
+// import burger from "./menu.png";
 const GitHubLink = "https://github.com/RotemKincaid";
 const linkedInLink = "https://www.linkedin.com/in/rotem-kincaid";
 
@@ -22,6 +22,12 @@ class Header extends Component {
   }
 
   sideBarToggle = () => {
+    this.setState({
+      toggle: !this.state.toggle
+    });
+  };
+
+  closeToggle = () => {
     this.setState({
       toggle: !this.state.toggle
     });
@@ -46,10 +52,13 @@ class Header extends Component {
             </div>
           )}
         </button>
-        <div className={toggle ? "show" : "header-inner"}>
+
+        <div
+          className={toggle ? "header-inner show test1" : "header-inner hide"}
+        >
           {toggle ? (
             <Link to="/">
-              <div className="nav-links">
+              <div className="nav-links" onClick={this.closeToggle}>
                 <img className="home-pic" src={home} alt="home" />
                 <h5>Home</h5>
               </div>
@@ -60,8 +69,8 @@ class Header extends Component {
             </Link>
           )}
           {toggle ? (
-            <Link to="/">
-              <div className="nav-links">
+            <Link to="/about">
+              <div className="nav-links" onClick={this.closeToggle}>
                 <img className="me" src={me} alt="me" />
                 <h5>About</h5>
               </div>
@@ -72,8 +81,8 @@ class Header extends Component {
             </Link>
           )}
           {toggle ? (
-            <Link to="/">
-              <div className="nav-links">
+            <Link to="/skills">
+              <div className="nav-links" onClick={this.closeToggle}>
                 <img className="skills-pic" src={skills} alt="skills" />
                 <h5>Skills</h5>
               </div>
@@ -84,8 +93,8 @@ class Header extends Component {
             </Link>
           )}
           {toggle ? (
-            <Link to="/">
-              <div className="nav-links">
+            <Link to="/work">
+              <div className="nav-links" onClick={this.closeToggle}>
                 <img className="code-pic" src={work} alt="code" />
                 <h5>Projects</h5>
               </div>
@@ -96,8 +105,8 @@ class Header extends Component {
             </Link>
           )}
           {toggle ? (
-            <Link to="/">
-              <div className="nav-links">
+            <Link to="/contact">
+              <div className="nav-links" onClick={this.closeToggle}>
                 <img className="paper-plane" src={paperPlane} alt="message" />
                 <h5>Contact</h5>
               </div>
@@ -108,13 +117,30 @@ class Header extends Component {
             </Link>
           )}
           <div className="links">
-            <a href={GitHubLink}>
-              <img className="github" src={github} alt="github" />
-            </a>
-
-            <a href={linkedInLink}>
-              <img className="linkedin" src={linkedIn} alt="linkedin" />
-            </a>
+            {toggle ? (
+              <div className="github-link">
+                <a href={GitHubLink}>
+                  <img className="github" src={github} alt="github" />
+                  {/* <h5>My GitHub</h5> */}
+                </a>
+              </div>
+            ) : (
+              <a href={GitHubLink}>
+                <img className="github" src={github} alt="github" />
+              </a>
+            )}
+            {toggle ? (
+              <div className="linkedin-link">
+                <a href={linkedInLink}>
+                  <img className="linkedin" src={linkedIn} alt="linkedin" />
+                  {/* <h5>My LinkedIn</h5> */}
+                </a>
+              </div>
+            ) : (
+              <a href={linkedInLink}>
+                <img className="linkedin" src={linkedIn} alt="linkedin" />
+              </a>
+            )}
           </div>
         </div>
       </div>

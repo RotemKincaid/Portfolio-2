@@ -31,9 +31,9 @@ class Skills extends Component {
             I am a fun, creative individual, with a strong work ethic, excellent
             communication skills, and great attention to detail. I have
             experience working with React, node, PostgreSQL, Redux, HTML5, CSS,
-            SASS, and other technologies. I am goal oriented and driven, and
-            seeking a full time opportunity to grow my skill set and
-            continuously learn.
+            SASS, and other technologies. I am goal oriented and driven, a self
+            starter, with an endless passion of learning and expanding my
+            skills.
           </p>
           <p>
             {" "}

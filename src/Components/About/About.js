@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./About.scss";
-import skills from "./skills2.png";
-import me from "./mePic.jpg";
+// import skills from "./skills2.png";
+import me from "./me-pic2.png";
 // import WOW from "wow.js";
 class About extends Component {
   // componentDidMount() {
@@ -13,7 +13,7 @@ class About extends Component {
       <div className="about-main">
         <div className="about-inner">
           <div className="paragraphs">
-            <h1 className="about-me wow bounce">About me...</h1>
+            <h1 className="about-me">About me...</h1>
             <br />
             <p className="about-1">
               I am a passionate, creative, and dedicated Web Developer. I
@@ -34,7 +34,7 @@ class About extends Component {
           </div>
           <div className="about-side">
             <img className="me-pic" src={me} alt="me" />
-            <img className="skills-icons" src={skills} alt="skills" />
+            {/* <img className="skills-icons" src={skills} alt="skills" /> */}
           </div>
         </div>
       </div>

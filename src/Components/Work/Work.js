@@ -17,7 +17,7 @@ class Work extends Component {
     return (
       <div className="work-main">
         <div className="work-inner">
-          <h1 className="my-work">My Work</h1>
+          <h1 className="my-work">My Work...</h1>
           <div className="paragraphs-work">
             <a href={stager}>www.stager.space</a>
             <p>
