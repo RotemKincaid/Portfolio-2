@@ -86,13 +86,15 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
       position: fixed;
       height: 100vh;
       width: 300px;
       margin: 0 auto;
       top: 0;
       left: 0;
+      box-sizing: border-box;
       // right: 10px;
       // left: 10px;
       background: linear-gradient(
@@ -244,6 +246,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 100px;
     // .github-link {
     //   display: flex;
     //   justify-content: center;
